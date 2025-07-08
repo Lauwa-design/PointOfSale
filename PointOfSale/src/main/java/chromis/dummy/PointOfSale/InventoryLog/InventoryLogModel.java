@@ -1,5 +1,6 @@
 package chromis.dummy.PointOfSale.InventoryLog;
 
+import chromis.dummy.PointOfSale.Enums.InventoryLogReason;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,6 +27,7 @@ public class InventoryLogModel {
         movementDate = LocalDateTime.now();
 
     }
-    //private InventoryLogReason reason ;
+    @Enumerated(EnumType.STRING)
+    private InventoryLogReason reason ;
 
 }

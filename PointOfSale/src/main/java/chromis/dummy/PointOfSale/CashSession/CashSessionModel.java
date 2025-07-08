@@ -1,9 +1,7 @@
 package chromis.dummy.PointOfSale.CashSession;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.PrePersist;
+import chromis.dummy.PointOfSale.Enums.CashSessionStatus;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -52,6 +50,10 @@ public class CashSessionModel {
     private BigDecimal totalCash;
 
     private boolean isClosed;
+
+    @Enumerated(EnumType.STRING)
+    private CashSessionStatus cashSessionStatus;
+
 
 
 }

@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class SupplierModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(nullable = false, unique = true)
     private String name;
@@ -16,4 +16,7 @@ public class SupplierModel {
     private String phoneNumber;
     private String address;
     private boolean active = true;
+
+
+
 }

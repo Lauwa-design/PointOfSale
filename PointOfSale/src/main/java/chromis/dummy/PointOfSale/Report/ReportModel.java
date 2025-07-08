@@ -1,6 +1,7 @@
 package chromis.dummy.PointOfSale.Report;
 
 
+import chromis.dummy.PointOfSale.Enums.ReportType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,12 +21,6 @@ public class ReportModel {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String title;
-
-
-    private String description;
-
-
     //private UserModel generatedBy;
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
@@ -39,5 +34,8 @@ public class ReportModel {
     public void onUpdate() {
         updatedOn = LocalDateTime.now();
     }
+
+    @Enumerated(EnumType.STRING)
+    private ReportType reporttype;
 
 }

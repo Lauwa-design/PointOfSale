@@ -1,11 +1,11 @@
 package chromis.dummy.PointOfSale.User;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.PrePersist;
+import chromis.dummy.PointOfSale.Enums.UserStatus;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 
 import java.util.UUID;
 
@@ -22,10 +22,16 @@ public class UserModel {
         if (id == null) {
             this.id = UUID.randomUUID().toString();
         }
+
     }
         private String userName;
         private String password;
         private String fullName;
+
+        @Enumerated(EnumType.STRING)
+        private UserStatus userStatus;
+
+
 
     }
 

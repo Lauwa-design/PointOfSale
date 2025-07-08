@@ -1,12 +1,13 @@
 package chromis.dummy.PointOfSale.Role;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
+import chromis.dummy.PointOfSale.Enums.Permission;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+
 
 @Entity
 @AllArgsConstructor
@@ -18,5 +19,13 @@ public class RoleModel {
     private Integer id;
     private String name;
     private String role;
+
+    @Enumerated(EnumType.STRING)
+        private Permission permission;
+
+
+
+
+
 }
 

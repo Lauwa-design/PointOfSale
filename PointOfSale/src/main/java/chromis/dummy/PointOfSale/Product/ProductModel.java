@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
 
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -26,8 +27,10 @@ public class ProductModel {
     @Column(precision = 10, scale = 2)
     private BigDecimal listPrice; // Standard or Manufacturer's Suggested Retail Price (MSRP)
 
-    private int stockQuantity = 0;
+    private Integer stockQuantity = 0;
     private boolean trackInventory = true;
     private boolean active = true;
+
+
 }
 

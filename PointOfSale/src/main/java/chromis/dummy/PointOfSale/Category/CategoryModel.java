@@ -3,6 +3,7 @@ package chromis.dummy.PointOfSale.Category;
 import jakarta.persistence.*;
 import lombok.*;
 
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -16,4 +17,6 @@ public class CategoryModel {
     private Long id;
     private String categoryName;
     private String description;
+
+
 }
