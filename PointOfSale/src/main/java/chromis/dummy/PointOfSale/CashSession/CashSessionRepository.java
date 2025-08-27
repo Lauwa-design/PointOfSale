@@ -1,4 +1,6 @@
 package chromis.dummy.PointOfSale.CashSession;
 
-public class CashSessionDTO {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CashSessionRepository extends JpaRepository < CashSessionModel,String> {
 }

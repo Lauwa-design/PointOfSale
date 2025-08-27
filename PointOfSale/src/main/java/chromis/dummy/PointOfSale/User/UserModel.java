@@ -2,9 +2,7 @@ package chromis.dummy.PointOfSale.User;
 
 import chromis.dummy.PointOfSale.Enums.UserStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 import java.util.UUID;
@@ -12,24 +10,22 @@ import java.util.UUID;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
+@Builder
+
 public class UserModel {
     @Id
-    String id ;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id ;
 
-    @PrePersist
-    public void generateId() {
-        if (id == null) {
-            this.id = UUID.randomUUID().toString();
-        }
 
-    }
-        private String userName;
-        private String password;
-        private String fullName;
+    private String userName;
+    private String password;
+    private String fullName;
 
-        @Enumerated(EnumType.STRING)
-        private UserStatus userStatus;
+    @Enumerated(EnumType.STRING)
+    private UserStatus userStatus;
 
 
 

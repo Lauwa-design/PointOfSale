@@ -1,9 +1,8 @@
 package chromis.dummy.PointOfSale.Payment;
 
+import chromis.dummy.PointOfSale.Enums.PaymentMethod;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -11,13 +10,15 @@ import java.time.LocalDateTime;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
+@Builder
 
 
 public class PaymentModel {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue (strategy = GenerationType.UUID)
+    private String id;
 
 
     private BigDecimal amount;
@@ -28,7 +29,7 @@ public class PaymentModel {
         paymentDate = LocalDateTime.now();
 
     }
-    // private PaymentMethod paymentmethod;
+    private PaymentMethod paymentMethod;
 
 
 }

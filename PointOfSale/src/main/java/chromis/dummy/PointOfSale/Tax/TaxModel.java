@@ -3,27 +3,26 @@ package chromis.dummy.PointOfSale.Tax;
 
 import chromis.dummy.PointOfSale.Enums.TicketStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Builder
 
 public class TaxModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
     private String taxName; // e.g., "VAT", "Sales Tax"
     private BigDecimal rate;
-    private boolean isDefault = false;
+    private Boolean isDefault;
 
     @Enumerated(EnumType.STRING)
     private TicketStatus ticketStatus;

@@ -1,12 +1,19 @@
 package chromis.dummy.PointOfSale.Supplier;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
+
 public class SupplierModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
     @Column(nullable = false, unique = true)
     private String name;
@@ -15,7 +22,7 @@ public class SupplierModel {
     private String email;
     private String phoneNumber;
     private String address;
-    private boolean active = true;
+    private Boolean active;
 
 
 

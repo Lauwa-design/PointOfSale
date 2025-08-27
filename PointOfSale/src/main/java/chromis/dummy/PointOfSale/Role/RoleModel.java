@@ -1,27 +1,25 @@
 package chromis.dummy.PointOfSale.Role;
-
-
-import chromis.dummy.PointOfSale.Enums.Permission;
+import chromis.dummy.PointOfSale.Enums.RoleType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+import lombok.*;
 
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
+@Builder
+
 public class RoleModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
     private String name;
     private String role;
 
     @Enumerated(EnumType.STRING)
-        private Permission permission;
+        private RoleType roleType;
 
 
 

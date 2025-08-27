@@ -2,22 +2,22 @@ package chromis.dummy.PointOfSale.InventoryLog;
 
 import chromis.dummy.PointOfSale.Enums.InventoryLogReason;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
+@Builder
 
 
 public class InventoryLogModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
     private String description;
     private Integer quantity;
     private LocalDateTime movementDate;
@@ -28,6 +28,6 @@ public class InventoryLogModel {
 
     }
     @Enumerated(EnumType.STRING)
-    private InventoryLogReason reason ;
+    private InventoryLogReason reason;
 
 }

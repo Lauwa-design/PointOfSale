@@ -1,4 +1,6 @@
 package chromis.dummy.PointOfSale.SaleItem;
 
-public class SaleItemRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SaleItemRepository extends JpaRepository<SaleItemModel, String> {
 }

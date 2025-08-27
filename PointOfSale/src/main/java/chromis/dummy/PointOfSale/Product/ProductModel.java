@@ -5,16 +5,19 @@ import lombok.*;
 import java.math.BigDecimal;
 
 
+
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
+@Builder
 
 public class ProductModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
     @Column(nullable = false, unique = true)
     private String productName;
@@ -27,9 +30,11 @@ public class ProductModel {
     @Column(precision = 10, scale = 2)
     private BigDecimal listPrice; // Standard or Manufacturer's Suggested Retail Price (MSRP)
 
-    private Integer stockQuantity = 0;
-    private boolean trackInventory = true;
-    private boolean active = true;
+    private Integer stockQuantity ;
+    private Boolean trackInventory = true;//useless
+
+    private Boolean active = true ; //use Prepersist
+
 
 
 }
