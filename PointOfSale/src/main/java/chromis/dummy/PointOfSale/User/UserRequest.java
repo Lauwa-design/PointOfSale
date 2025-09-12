@@ -16,7 +16,6 @@ public record UserRequest (
               .userName(userRequest.userName)
               .password(userRequest.password)
               .fullName(userRequest.fullName)
-              .userStatus(userRequest.userStatus)
               .build();
   }
 }

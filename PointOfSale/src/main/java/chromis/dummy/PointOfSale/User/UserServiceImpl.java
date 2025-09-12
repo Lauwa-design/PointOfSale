@@ -1,6 +1,7 @@
 package chromis.dummy.PointOfSale.User;
 
 
+import chromis.dummy.PointOfSale.Enums.UserStatus;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -38,7 +39,8 @@ public class UserServiceImpl implements UserService{
         existing.setUserName(userRequest.userName());
         existing.setPassword(userRequest.password());
         existing.setFullName(userRequest.fullName());
-        existing.setUserStatus(userRequest.userStatus());
+        existing.setUserStatus(UserStatus.ACTIVE);
+
 
         return userRepository.save(existing);
 

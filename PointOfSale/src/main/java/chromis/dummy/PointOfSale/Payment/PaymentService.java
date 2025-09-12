@@ -8,7 +8,7 @@ import java.util.List;
 public interface PaymentService {
     PaymentModel create(PaymentRequest paymentRequest );
     List<PaymentModel> getAll();
-    PaymentModel getPaymentModelById(String id);
+    PaymentModel getPaymentById(String id);
     PaymentModel update(String id,PaymentRequest paymentRequest);
     void delete(String id);
 }

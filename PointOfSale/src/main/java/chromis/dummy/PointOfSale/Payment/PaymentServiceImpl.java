@@ -24,7 +24,7 @@ public class PaymentServiceImpl implements PaymentService {
 
     }
     @Override
-    public PaymentModel getPaymentModelById(String id){
+    public PaymentModel getPaymentById(String id){
         return paymentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Payment not found with ID: " + id));
 

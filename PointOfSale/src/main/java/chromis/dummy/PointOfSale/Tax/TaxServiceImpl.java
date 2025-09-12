@@ -1,6 +1,8 @@
 package chromis.dummy.PointOfSale.Tax;
 
 
+import chromis.dummy.PointOfSale.Enums.TicketStatus;
+import chromis.dummy.PointOfSale.Enums.UserStatus;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -39,7 +41,7 @@ public class TaxServiceImpl implements TaxService{
         existing.setTaxName(taxRequest.taxName());
         existing.setRate(taxRequest.rate());
         existing.setIsDefault(taxRequest.isDefault());
-        existing.setTicketStatus(taxRequest.ticketStatus());
+        existing.setTicketStatus(TicketStatus.PAID);
 
 
 

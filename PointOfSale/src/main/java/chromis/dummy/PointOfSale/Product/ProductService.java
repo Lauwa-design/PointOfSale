@@ -1,10 +1,10 @@
 package chromis.dummy.PointOfSale.Product;
 
-import org.springframework.stereotype.Service;
+//import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+//@Service  not required
 public interface ProductService {
     ProductModel create(ProductRequest productRequest);
     List<ProductModel> getAllProducts();
